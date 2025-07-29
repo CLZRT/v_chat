@@ -1,0 +1,18 @@
+database:
+  host: "localhost"
+  port: 5432
+  user: "admin"
+  # 使用 ${ENV_VAR_NAME} 语法来引用环境变量
+  password: "${DB_PASSWORD}"
+
+api_server:
+  # 如果环境变量不存在，可以提供一个默认值
+  port: "${API_PORT:8000}"
+data:
+  log_name: "data"
+  collect:
+    window_second: 5 #最少为5.
+  format:
+    window_minute: 1
+db:
+  file_name: v_chat.db
